@@ -1,7 +1,7 @@
 from marshmallow_sqlalchemy import field_for
 from flask_marshmallow.fields import fields
-from extensions import ma
-from models import Product
+from api.extensions import ma
+from api.models import Product
 
 class ProductSchema(ma.ModelSchema):
     id = field_for(Product, 'id', dump_only=True)

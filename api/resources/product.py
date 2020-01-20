@@ -1,8 +1,8 @@
 from flask import request, abort
 from flask_restplus import Resource, fields
-from extensions import db, api
-from models import Product 
-from schemas import product_schema, products_schema
+from api.extensions import db, api
+from api.models import Product 
+from api.schemas import product_schema, products_schema
 
 product_fields = api.model('Product', {
     'nome': fields.String(),
@@ -23,7 +23,6 @@ class ProductListResource(Resource):
     
     @api.expect(product_fields) 
     def post(self):
-        print(request.json)
         product = product_schema.load(request.json)
         db.session.add(product)
         db.session.commit()

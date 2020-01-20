@@ -1,7 +1,7 @@
 import json
 from urllib import request
-from api.app import app, db
-from api.models import Product
+from app import app, db
+from models import Product
 
 with app.app_context():
     db.create_all()

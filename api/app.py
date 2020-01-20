@@ -1,8 +1,8 @@
 import os
 from flask import Flask 
 from flask_restplus import Api
-from resources.product import ProductResource
-from extensions import db, ma, api
+from api.resources.product import ProductResource
+from api.extensions import db, ma, api
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -13,7 +13,7 @@ db.init_app(app)
 ma.init_app(app)
 api.init_app(app)
 
-from models import Product
+from api.models import Product
 
 if __name__ == '__main__':
     app.run(debug=True)

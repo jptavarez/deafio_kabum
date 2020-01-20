@@ -1,6 +1,6 @@
 import json
 from urllib import request
-from api.app import app, db
+from app import app, db
 from api.models import Product
 
 with app.app_context():

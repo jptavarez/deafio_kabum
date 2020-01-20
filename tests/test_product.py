@@ -1,7 +1,7 @@
 import os
 import tempfile
 import pytest
-from api.app import app, db
+from app import app, db
 from api.models import Product
 
 @pytest.fixture
